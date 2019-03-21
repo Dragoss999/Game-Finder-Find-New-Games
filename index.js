@@ -6,10 +6,18 @@ var locationOptions = {
 	enableHighAccuracy: true 
 };
 
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoiZHJhZ29zczk5OSIsImEiOiJjanNlb3gyMGowamEwM3ltZGtxd2V2M2RzIn0.R5eW9UF0UJFHiDWdguG74A'
+}).addTo(mymap);
+
 //when the jQuery Mobile page is initialised
 $(document).on('pageinit', function() {
 	
 	//set up listener for button clicks
+    console.log("I work")
 	$('#startLocationButton').on('click', updatePosition);
 	$('#stopLocationButton').on('click', stopPosition);
 	
@@ -55,6 +63,7 @@ function successPosition(position) {
     var today = new Date();
 	var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
+    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 	
 	//OK. Now we want to update the display with the correct values
 	$('#lattext').val(latitude);
@@ -69,12 +78,3 @@ function failPosition(error) {
 	$('#time').val("Error getting data: " + error);
 	
 }
-
-var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox.streets',
-    accessToken: 'pk.eyJ1IjoiZHJhZ29zczk5OSIsImEiOiJjanNlb3gyMGowamEwM3ltZGtxd2V2M2RzIn0.R5eW9UF0UJFHiDWdguG74A'
-}).addTo(mymap);
