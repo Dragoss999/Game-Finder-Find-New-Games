@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <title>Untitled Document</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
       integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -18,33 +19,23 @@
 </head>
 
 <body>
+	<div data-role="page" id="map-page">
 
-<div data-role="page" id="pageone">
+		<div data-role="header">
+			<h1>Google Maps</h1>
+		</div>
+		<!-- /header -->
 
-  <div data-role="header">
-    <h1>Header</h1>
-  </div>
+		<div role="main" class="ui-content" id="map-canvas">
+			<!-- map loads here... -->
+		</div>
+		<!-- /content -->
 
-  <div data-role="content" id="content">
-    <div data-role="fieldcontain" id="fieldcontain">
-		<button id="startLocationButton">Update Location</button>
-        <button id="stopLocationButton">Stop Updates</button>
-      	<label for="longtext">Longitude:</label>
-      	<input type="text" name="longtext" id="longtext" value=""  />
-      	<label for="lattext">Latitude:</label>
-      	<input type="text" name="lattext" id="lattext" value=""  />
-      	<label for="time">Time:</label>
-      	<input type="text" name="time" id="time" value=""  />
-        <div id = "mapid">
-        
-        </div>
-    </div>
-    
-  </div>
-
-</div>
-
-
-
+		<div data-role="footer">
+			<h4>Page Footer</h4>
+		</div>
+		<!-- /footer -->
+	</div>
+	<!-- /page -->
 </body>
 </html>
