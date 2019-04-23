@@ -18,7 +18,7 @@ $(document).on('pageinit', "#map-page", function() {
 	//change time box to show message
 	$('#time').val("Press the button to get location data");
 	
-    var mymap = L.map('map-canvas').setView([51.505, -0.09], 13);
+    var mymap = L.map('map-canvas').setView([52.195977, -2.225442], 17);
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
