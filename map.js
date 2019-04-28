@@ -28,6 +28,22 @@ $(document).on('pageinit', "#map-page", function() {
     }).addTo(mymap);
 });
 
+axios({
+  url: "https://api-v3.igdb.com/release_dates",
+  method: 'POST',
+  headers: {
+      'Accept': 'application/json',
+      'user-key': "670ff0704d2378cfa68684d9fe20882f",
+  },
+  data: "fields category,created_at,date,game,human,m,platform,region,updated_at,y;"
+})
+  .then(response => {
+      console.log(response.data);
+  })
+  .catch(err => {
+      console.error(err);
+  });
+
 
 
 //Call this function when you want to watch for chnages in position
