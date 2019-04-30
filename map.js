@@ -28,7 +28,7 @@ $(document).on('pageinit', "#map-page", function() {
     }).addTo(mymap);
 });
 
-axios({
+/*axios({
   url: "https://api-v3.igdb.com/release_dates",
   method: 'POST',
   headers: {
@@ -42,7 +42,7 @@ axios({
   })
   .catch(err => {
       console.error(err);
-  });
+  });*/
 
 
 
