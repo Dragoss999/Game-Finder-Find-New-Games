@@ -24,6 +24,7 @@ router.get('/api/genres/search/:name', async (req,res) => {
             return res.send({'error' : 'Genre not found with that name'});
         }
         res.send(response.data);
+        console.log(response.data);
     }    
     catch(error) {
         console.log(error);
