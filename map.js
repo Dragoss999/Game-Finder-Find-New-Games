@@ -13,7 +13,7 @@ $(document).on('pageinit', "#map-page", function() {
 	//set up listener for button clicks
     console.log("I work")
 	//Map code that worked until it didn't
-    var mymap = L.map('map-canvas').setView([52.195977, -2.225442], 17);
+    var mymap = L.map('map-canvas').setView([52.191580, -2.219281], 17);
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
