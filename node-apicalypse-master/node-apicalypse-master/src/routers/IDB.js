@@ -1,3 +1,7 @@
+/*
+All this code was server side code, meaning if i was making a server, i'd be golden. It's basically hosting a server locally, 
+making requests to get data and then storing it using res.send and a variable to store it into
+
 const express = require('express');
 const apicalypse = require('apicalypse').default;
 const router = new express.Router();
@@ -30,7 +34,19 @@ router.get('/api/genres/search/:name', async (req,res) => {
         console.log(error);
         res.status(400).send();
     }
-});
+});*/
+
+//This is the block of code which makes requests to retrive the information i want to display in HTML
+var xhttp = new XMLHttpRequest():
+xhttp.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        //This should get the response data and store it but I ran out of time and couldn't figure it out
+    }
+    xhttp.open("POST", "index.html", true); //This makes the request asyncronus, which means it doesn't stop the code at the end of the send step
+    xhttp.setRequestHeader("user-key", "670ff0704d2378cfa68684d9fe20882f") //This makes the user key retained by the app to make users have acess to stuff
+    xhttp.setRequestHeader("accept", "application/json") //This means the app can run json code
+    xhttp.send("game name") //This would send game names to the correct place if I could make it work
+}
 
 /*
 This is what I tried to do to get the games showing up but I couldn't seem to get it working
